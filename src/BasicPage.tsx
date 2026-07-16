@@ -11,7 +11,7 @@ const basicPage:React.FC<basicPageProps> = (props) => {
     }
     return <section>
             <div>
-              <img src={props.img} className="base" style={{ width: "1000px", height: "300px" }} />
+              <img src={props.img} style={props.img?{ width: "800px", height: "300px" }:{}} />
             </div>
             <div style={{
               margin: '20px 10px 10px 20px'
