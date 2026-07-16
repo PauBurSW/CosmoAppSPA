@@ -1,4 +1,5 @@
 import nebulaImg from './assets/nebula.jpg'
+import React from 'react';
 
 function FirstPage() {
     return <section id="center">
