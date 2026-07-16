@@ -3,13 +3,16 @@ import ReactConfetti from "react-confetti";
 
 function ClickCounterButton() {
 
-    const [active, setActive] = useState(false);
+    const localActive = localStorage.getItem("active");
+    const storedActive:string = localActive ? localActive : "false";
+    const [active, setActive] = useState(storedActive);
 
     const handleClick = () => {
-        setActive(true);
+        setActive("true");
+        localStorage.setItem("active", "true");
     };
 
-    if (active == true)
+    if (active == "true")
         return <ReactConfetti/>;
     return <button
             onClick={handleClick}
