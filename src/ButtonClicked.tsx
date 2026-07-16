@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactConfetti from "react-confetti";
 
 function ClickCounterButton() {
@@ -8,10 +8,15 @@ function ClickCounterButton() {
     const [active, setActive] = useState(storedActive);
 
     const handleClick = () => {
-        setActive("true");
-        localStorage.setItem("active", "true");
+        if (active == "true") {
+            setActive("false");
+            localStorage.setItem("active", "false");
+        } else {
+            setActive("true");
+            localStorage.setItem("active", "true");
+        }
     };
-
+    
     if (active == "true")
         return <ReactConfetti/>;
     return <button
